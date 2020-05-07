@@ -63,7 +63,16 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ wifi_essid, "%s=",        "wlp2s0" },
-	{ wifi_perc, "%s%% | ",         "wlp2s0" },
-	{ datetime, "%s",           "%F %R" },
+	{ load_avg,    "Load:%s | ",   "NULL" },
+	{ cpu_perc,    "CPU:%3s%% | ",  "NULL" },
+	{ ram_perc,    "Mem:%3s%% | ",  "NULL" },
+	{ temp,        "%2sC | ",      "/sys/class/thermal/thermal_zone0/temp" },
+	{ wifi_perc,   "WiFi:%3s%% ",   "wlp2s0" },
+	{ netspeed_rx, "RX:%9s ",       "wlp2s0" },
+	{ netspeed_tx, "TX:%9s | ",     "wlp2s0" },
+	{ battery_perc,    "Bat:%3s%% ",  "BAT1" },
 };
+
+/* unused functions
+	{ datetime, "%s",           "%F %R" },
+*/
